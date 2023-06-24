@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #2e2e44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background: #2d2f41;
+    width: auto;
+    box-shadow: 0 5px 25px rgba(14, 21, 37, .8);
+    border-radius: 7px;
+}
+
+.relogio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 220px;
+    width: 550px;
+
+}
+
+.relogio div {
+    height: 170px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #1f2030;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, .3);
+    border-radius: 7px;
+    letter-spacing: 3px;
+}
+
+
+.relogio span {
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.relogio span.tempo {
+    font-size: 10px;
+}
+
+.footer {
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 13px;
+}
+
+.glowing{
+    height: 200px;
+    width: 500px;
+    display: block;
+    position: absolute;
+}
+
+.glowing::before, .glowing::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+
+    z-index: -1;
+    top: -5px;
+    right: -5px;
+    left: -5px;
+    bottom: -5px;
+
+    background: linear-gradient(45deg, #24ff6d, #2f93f1, #ff5e9a);
+    filter: blur(150px);
+    background-size: 200% 200%;
+    animation: glowing 15s ease infinite;
+}
+
+@keyframes glowing{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.glowing::after{
+    filter: blur(40);
+}
+
